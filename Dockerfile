@@ -15,8 +15,8 @@ RUN apt-get update &&\
     libgtk-3-0 libxt6 libx11-xcb1 libdbus-glib-1-2 xz-utils curl libcurl4 ca-certificates gnupg dirmngr &&\
     rm -rf /var/lib/apt/lists/* &&\
     export GNUPGHOME="$(mktemp -d)" &&\
-    curl -sSL -o tor.tar.xz https://www.torproject.org/dist/torbrowser/${VERSION}/tor-browser-linux64-${VERSION}_${LANGUAGE}.tar.xz &&\
-    curl -sSL -o tor.tar.xz.asc https://www.torproject.org/dist/torbrowser/${VERSION}/tor-browser-linux64-${VERSION}_${LANGUAGE}.tar.xz.asc &&\
+    curl -SL -o tor.tar.xz https://www.torproject.org/dist/torbrowser/${VERSION}/tor-browser-linux64-${VERSION}_${LANGUAGE}.tar.xz &&\
+    curl -SL -o tor.tar.xz.asc https://www.torproject.org/dist/torbrowser/${VERSION}/tor-browser-linux64-${VERSION}_${LANGUAGE}.tar.xz.asc &&\
     for server in pool.sks-keyservers.net \
               hkp://pool.sks-keyservers.net:80 \
               keyserver.ubuntu.com \
